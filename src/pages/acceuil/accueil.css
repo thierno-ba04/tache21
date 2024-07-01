@@ -36,12 +36,12 @@
 }
 
   .text-accl{
-    font-size: 14px;
+    font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-style: oblique;
     color: #d4d0d0;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .text-accl span {
@@ -50,12 +50,12 @@
   
   .form-container {
     width: 350px;
-    height: 500px;
+    height: 400px;
     /* background-color: #d4d0d0; */
     box-shadow: rgba(209, 206, 206, 0.35) 0px 5px 15px;
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 20px 30px;
+    padding: 10px 30px;
   }
 
   .title {
@@ -119,8 +119,9 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  .form-buttton {
+  .form-button {
     padding: 10px 15px;
+    margin-top: -10px;
     width: 200px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
           "Lucida Sans Unicode", Geneva, Verdana, sans-serif;

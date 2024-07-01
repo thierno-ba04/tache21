@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import '../auth/Login.css';
-import { auth } from "../../firebase/Firebase";
+import { auth } from "../../firebase/firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { UserAuth } from "../../context/AuthContext";
+// import { UserAuth } from "../../context/AuthContext";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const { googleSignIn, user } = UserAuth();
+  // const { googleSignIn, user } = UserAuth();
   const navigate = useNavigate();
 
   const login = async (event) => {
@@ -73,7 +73,7 @@ const Login = () => {
                 </form>
                 <p class="sign-up-label">
                   Don't have an account?
-                  <Link to="/signup" className="sign-up-link">Sign up</Link>
+                  <Link to="/" className="sign-up-link">Home</Link>
                 </p>
                 <div class="buttons-container">
                   <div class="apple-login-button">
