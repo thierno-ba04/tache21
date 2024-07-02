@@ -1,7 +1,7 @@
 // Login.js
 
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -29,10 +29,10 @@ const Login = () => {
       const userData = userDoc.data();
 
       if (userData && userData.role === "coach") {
-        navigate("/coachdashboard");
+        Navigate("/coachdashboard");
         toast.success("Login successful! Welcome Coach.");
       } else if (userData && userData.role === "student") {
-        navigate("/etuduantdashboard");
+        Navigate("/etuduantdashboard");
         toast.success("Login successful! Welcome Student.");
       } else {
         alert("Rôle utilisateur non défini");
