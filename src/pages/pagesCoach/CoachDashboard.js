@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
-
-class CoachDashboard extends Component {
-
-    render() {
-        return (
-            <div>
-dfhghjh
-            </div>
-        );
-    }
+const CoachDashboard = () => {
+    return ( 
+        <div>
+            <p>efejnejn</p>
+        </div>
+     );
 }
-
+ 
 export default CoachDashboard;
