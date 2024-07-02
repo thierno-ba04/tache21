@@ -3,7 +3,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/auth/Login";
-import CoachDashboard from "./pages/pagesCoach/dashboardCoach/CoachDashboard";
+import CoachDashboard from "./pages/pagesCoach/CoachDashboard";
 import EtuduantDashboard from "./pages/pagesEtudiant/dashboardEtudiant/EtudiantDashboard";
 import Acceuil from "./pages/acceuil/Acceuil";
 // import { ToastContainer } from "react-toastify";
@@ -26,4 +26,3 @@ function App() {
 }
 
 export default App;
-

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../acceuil/accueil.css';
+import '../acceuil/acceuil.css';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
