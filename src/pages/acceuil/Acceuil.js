@@ -17,7 +17,7 @@ const Acceuil = () => {
     getData();
   }, []);
 
-  const userCollection = collection(db, 'users'); // Assurez-vous que le nom de la collection correspond à celui dans votre base de données
+  const userCollection = collection(db, 'users');
 
   const getData = async () => {
     try {
@@ -31,38 +31,43 @@ const Acceuil = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Validation des champs
     if (!name || !email || !message) {
-      toast.error('Veuillez remplir tous les champs du formulaire.');
+      toast.error('Veuillez remplir tous les champs.');
       return;
     }
-
+    if (!validateEmail(email)) {
+      toast.error('Veuillez entrer un email valide.');
+      return;
+    }
     try {
-      // Ajouter un nouveau document à la collection 'users'
-      const docRef = await addDoc(userCollection, {
+      await addDoc(userCollection, {
         name: name,
         email: email,
         message: message
       });
 
       toast.success('Message envoyé avec succès!');
-      // Réinitialiser les champs du formulaire après l'envoi réussi
       setName('');
       setEmail('');
       setMessage('');
-      getData(); // Rafraîchir la liste des utilisateurs après ajout d'un nouveau message
+      getData();
     } catch (error) {
       console.error("Erreur lors de l'envoi du message:", error);
-      toast.error('Erreur lors de l\'envoi du message. Veuillez réessayer plus tard.');
+      toast.error('Erreur lors de l\'envoi du message.');
     }
+  };
+
+  const validateEmail = (email) => {
+    // Simple regex to check email validity
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
   };
 
   return (
     <div className='body'>
       <ToastContainer />
       <Container>
-        <Row className='mt-5'>
+        <Row className='mt-4'>
           <Col className="col-lg-6 col-md-6">
             <h2 className='fw-bold titre'>Bienvenue dans notre plateforme <br />
               <span>e-learning!</span>
@@ -110,7 +115,7 @@ const Acceuil = () => {
             </div>
           </Col>
         </Row>
-        <div className='d-flex justify-content-center align-items-center mb-4'>
+        <div className='d-flex justify-content-center align-items-center'>
           <Link to="/login">
             <button className="form-button">Log In</button>
           </Link>
