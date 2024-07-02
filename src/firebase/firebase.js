@@ -1,16 +1,6 @@
-
-
-
-
-// firebase.js
-
-
-import firebase from 'firebase/compat/app';  // Utilisez 'firebase/compat/app' pour les versions compatibles
-
-// Importez les services Firebase dont vous avez besoin
-import 'firebase/compat/auth';     // Pour l'authentification
-import 'firebase/compat/firestore'; // Pour Firestore (base de données)
-
+import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCJIxKtl3E9_BdsYUXHR3YIBwQj8du5aBk",
@@ -21,9 +11,8 @@ const firebaseConfig = {
   appId: "1:297352485425:web:bb26bca311b5e669fe5310"
 };
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-// Export Firebase services that you use
-export const auth = app.auth();
-export const firestore = app.firestore();
+export { auth, db, createUserWithEmailAndPassword, collection, addDoc };
