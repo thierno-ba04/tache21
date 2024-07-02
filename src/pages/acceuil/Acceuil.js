@@ -101,7 +101,7 @@ const Acceuil = () => {
             </div>
           </Col>
           <Col className="col-lg-6 col-md-6">
-            <div className="forme-container ms-auto">
+            <div className="forme-container">
               <p className="title">Welcome back</p>
               <form className="form pt-4" onSubmit={handleSubmit}>
                 <input type="text" className="input" placeholder="Nom" value={name} onChange={(e) => setName(e.target.value)} />

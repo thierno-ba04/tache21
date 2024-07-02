@@ -79,7 +79,7 @@ const Login = () => {
                 <p className="page-link">
                   <span className="page-link-label">Forgot Password?</span>
                 </p>
-                <button className="form-btn" type="submit">Log in</button>
+                <Link to="/coachdashboard"><button className="form-btn" type="submit">Log in</button></Link>
               </form>
               <p className="sign-up-label">
                 Don't have an account?
