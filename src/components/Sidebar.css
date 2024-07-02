@@ -1,0 +1,246 @@
+:root{
+    --bg-primary: #f4f5ff;
+    --bg-secondary: #87ceeb;
+    --bg-active: #fff; 
+    --cl-text: #f6f4e6;
+    --bg-color: #5a5c69;
+    --bg-color1: #4e73df;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mysiderbar{
+    align-items: center;
+    a{
+        text-decoration: none;
+        color: #5a5c69;
+    }
+    a:hover{
+        opacity: 0.6;
+    }
+    button#dropdown-basic {
+        display: flex;
+        align-items: center;
+    }
+    .messagerie button{
+        background: none !important;
+        border: none;
+        color: #5a5c69;
+    }
+    .monProfile img{
+        width: 25px;
+        height: 25px;
+        border-radius: 2px;
+    }
+
+    .userIcon{
+        background: #8f8f8f;
+        padding: 3px 10px 3px 10px ;
+        border-radius: 1rem;
+    }
+
+    .title {
+        text-align: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        margin: 10px 0 30px 0;
+        font-size: 16px;
+        font-weight: 800;
+        margin-top: 35px;
+    }
+    
+    nav{
+        position: fixed;
+        width: 60px;
+        height: 100%;
+        top: 0;
+        left: 0px;
+        display: flex;
+        background: var(--bg-active);
+        transition: .5s;
+        box-shadow: 0 .5rem 1.5rem rgba(1, 1, 1, 0.6);
+        overflow: hidden;
+        z-index: 1;
+    }
+     
+    nav.active{
+        width: 230px;
+        z-index: 1012;
+    }
+    nav ul{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    nav ul li{
+        list-style: none;
+        width: 100%;
+        position: relative;
+    }
+    ol, ul {
+        padding-left: 0rem;
+    }
+    
+    nav ul li a:hover,
+    nav ul li .messagerie button:hover{
+        color: var(--bg-active);
+        border-bottom: none;
+    }
+    nav ul li:hover{
+        background: var(--bg-color);
+        width: 100%;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    
+    nav ul li a{
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        text-decoration: none;
+        color: var(--bg-color);
+        transition: .2s;
+    }
+    nav ul li a::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        transition: .2s;
+    }
+    nav ul li a .icon{
+        position: relative;
+        display: block;
+        min-width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+    }
+    nav ul li a .icon *{
+        font-style: 1.1rem;
+    }
+    nav ul li a .title{
+        position: relative;
+        font-style: .85rem;
+    }
+    nav ul li a .toggle{
+        border-bottom: 3px solid var(--bg-primary);
+    }
+    .toggle{
+        cursor: pointer;
+    }
+    header{
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        height: 60px;
+        background-color: var(--bg-active) ;
+        box-shadow: 0 .5rem 1.5rem rgba(10, 10, 10, 0.2);
+        color: var(--bg-color);
+    }
+    .out{
+        margin-top: 50px;
+    }
+    .sous-p-link a{
+        color: black;
+    }
+    .sous-p-link a:hover{
+        opacity: 0.5;
+    } 
+    .btn-message{
+        background: #8f8f8f;
+        border-radius: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 1399px){
+    .CardDash .myContent1 {
+        margin-top: 20px;
+    }
+    .mysiderbar .out {
+        margin-top: 0px;
+}
+}
+@media only screen and (max-width: 1024px){
+    .CardDash .myContent1 {
+        margin-top: 20px;
+    }
+    .mysiderbar .out {
+        margin-top: 0px;
+}
+}
+ @media only screen and (max-width: 768px){
+        .mysiderbar header{
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;
+            height: 60px;
+            background-color: var(--bg-active) ;
+            box-shadow: 0 .5rem 1.5rem rgba(10, 10, 10, 0.2);
+            color: var(--bg-color);
+        }
+        .mysiderbar header a {
+            color: var(--bg-color);
+        }
+        .mysiderbar nav.active{
+            left:0;
+            width: 40%;
+            z-index: 1012;
+        }
+        .mysiderbar nav{
+            left: -60px;
+            top: 60px;
+        }
+        .mysiderbar nav ul li a.toggle{
+            display: none
+        }
+        .mysiderbar header .text-middle h4{
+            display: none;
+        }
+        .mysiderbar nav ul li a .icon{
+            height: 50px;
+        }
+}
+@media only screen and (max-width: 567px){
+        .mysiderbar header{
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;
+            height: 60px;
+            background-color: var(--bg-active) ;
+            box-shadow: 0 .5rem 1.5rem rgba(10, 10, 10, 0.2);
+            color: var(--bg-color);
+        }
+        .mysiderbar header a {
+            color: var(--bg-color);
+        }
+        .mysiderbar nav.active{
+            left:0;
+            width: 70%;
+            z-index: 1012;
+        }
+        .mysiderbar nav{
+            left: -60px;
+            top: 60px;
+        }
+        .mysiderbar nav ul li a.toggle{
+            display: none
+        }
+        .mysiderbar header .text-middle h4{
+            display: none;
+        }
+        .mysiderbar .userIcon {
+            background: #8f8f8f;
+            padding: 3px 8px 3px 8px;
+            border-radius: 1rem;
+            font-size: 10px;
+        }
+        .mysiderbar .userIcon .nomUser{
+            display: none;
+        }
+}

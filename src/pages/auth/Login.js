@@ -79,13 +79,14 @@ const Login = () => {
                 <p className="page-link">
                   <span className="page-link-label">Forgot Password?</span>
                 </p>
+                <Link to="/CoachDashboard">
                 <button className="form-btn" type="submit">Log in</button>
+                </Link>
               </form>
               <p className="sign-up-label">
                 Don't have an account?
                 <Link to="/" className="sign-up-link">Home</Link>
               </p>
-              <div className="buttons-container"></div>
             </div>
             </div>
           </Col>
