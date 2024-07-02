@@ -1,7 +1,11 @@
+import SidebarCoach from "../../components/SidebarCoach";
+import Dashboard from "./Dashbord";
+
 const CoachDashboard = () => {
     return ( 
         <div>
-            <p>efejnejn</p>
+            <SidebarCoach />
+            
         </div>
      );
 }
