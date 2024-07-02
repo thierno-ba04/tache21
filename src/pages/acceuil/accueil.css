@@ -36,7 +36,7 @@
 }
 
   .text-accl{
-    font-size: 13px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-style: oblique;
@@ -48,14 +48,14 @@
     color: rgb(31, 209, 209);
   }
   
-  .form-container {
+  .forme-container {
     width: 350px;
-    height: 400px;
-    /* background-color: #d4d0d0; */
+    height: 500px;
+    background-color: #d4d0d0;
     box-shadow: rgba(209, 206, 206, 0.35) 0px 5px 15px;
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 10px 30px;
+    padding: 20px 30px;
   }
 
   .title {

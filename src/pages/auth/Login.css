@@ -1,167 +1,173 @@
 .form-container {
-    width: 350px;
-    height: 500px;
-    background-color: #d4d0d0;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 20px 30px;
-  }
-  
-  .body {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    background-image: url("/src/assets/img/image-de-font.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    color: aliceblue;
-    position: relative;
-    background-color: #00000099;
-    z-index: 1;
-  }
-  .body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 30%;
+  height: 500px;
+  /* margin: auto; */
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  padding-top: 90px;
+  @media screen and (min-width: 320px){
     width: 100%;
-    height: 100%;
+  }
+
+  @media screen and (min-width: 768px){
+    width: 70%;
+  }
+
+  @media screen and (min-width: 1024px){
+    width: 30%;
+  }
 }
-  
-  .glob-form{
-    display: flex;
-    justify-content: center;
-    /* margin-top: 95px; */
-  }
-  
-  .title {
-    text-align: center;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    margin: 10px 0 30px 0;
-    font-size: 28px;
-    font-weight: 800;
-  }
-  
-  .form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-bottom: 15px;
-  }
-  
-  .input {
-    border-radius: 20px;
-    border: 1px solid #c0c0c0;
-    outline: 0 !important;
-    box-sizing: border-box;
-    padding: 12px 15px;
-  }
-  
-  .page-link {
-    text-decoration: underline;
-    margin: 0;
-    text-align: end;
-    color: #747474;
-    text-decoration-color: #747474;
-  }
-  
-  .page-link-label {
-    cursor: pointer;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-  }
-  
-  .page-link-label:hover {
-    color: #000;
-  }
-  
-  .form-btn {
-    padding: 10px 15px;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    border-radius: 20px;
-    border: 0 !important;
-    outline: 0 !important;
-    background: teal;
-    color: white;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  
-  .form-btn:active {
-    box-shadow: none;
-  }
-  
-  .sign-up-label {
-    margin: 0;
-    font-size: 10px;
-    color: #747474;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-  
-  .sign-up-link {
-    margin-left: 1px;
-    font-size: 11px;
-    text-decoration: underline;
-    text-decoration-color: teal;
-    color: teal;
-    cursor: pointer;
-    font-weight: 800;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-  
-  .buttons-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 20px;
-    gap: 15px;
-  }
-  
-  .apple-login-button,
-      .google-login-button {
-    border-radius: 20px;
-    box-sizing: border-box;
-    padding: 10px 15px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    font-size: 11px;
-    gap: 5px;
-  }
-  
-  .apple-login-button {
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #000;
-  }
-  
-  .google-login-button {
-    border: 2px solid #747474;
-  }
-  
-  .apple-icon,
-      .google-icon {
-    font-size: 18px;
-    margin-bottom: 1px;
-  }
+
+.body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-image: url("/src/assets/img/image-de-font.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  color: aliceblue;
+  position: relative;
+}
+
+.body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000099;
+  /* z-index: -1; */
+}
+
+.glob-form{
+  display: flex;
+  justify-content: center;
+  margin-top: 95px;
+}
+
+.title {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 10px 0 30px 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.input {
+  border-radius: 20px;
+  border: 1px solid #c0c0c0;
+  outline: 0 !important;
+  box-sizing: border-box;
+  padding: 12px 15px;
+  width: 100%;
+}
+
+.page-link {
+  text-decoration: underline;
+  margin: 0;
+  text-align: end;
+  color: #747474;
+  text-decoration-color: #747474;
+}
+
+.page-link-label {
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.page-link-label:hover {
+  color: #000;
+}
+
+.form-btn {
+  padding: 10px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: teal;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-btn:active {
+  box-shadow: none;
+}
+
+.sign-up-label {
+  margin: 0;
+  font-size: 10px;
+  color: #747474;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sign-up-link {
+  margin-left: 1px;
+  font-size: 11px;
+  text-decoration: underline;
+  text-decoration-color: teal;
+  color: teal;
+  cursor: pointer;
+  font-weight: 800;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+/* CSS MASQUER OU VOIR PASSWORD */
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff; /* Adjust this color to match your design */
+  font-size: 14px; /* Adjust this size to match your design */
+}
