@@ -108,7 +108,8 @@ const SidebarCoach = () => {
                       </div>
                     )}
                   </div>
-                  <div className="user-profile">
+                  <div className=" d-flex user-profile gap-4">
+                    <p className="text-light">Coacher coach</p>
                         <img src="https://img.freepik.com/photos-gratuite/gros-plan-image-programmeur-travaillant-son-bureau-dans-bureau_1098-18707.jpg" alt="user" height='40px' width='40px' className='rounded'/>
                       </div>
                 </div>
