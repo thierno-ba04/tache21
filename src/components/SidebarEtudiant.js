@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Dropdown } from "react-bootstrap";
+import { Button, Dropdown } from "react-bootstrap";
 import {
   BoxArrowLeft,
   ListNested,
@@ -97,6 +97,8 @@ const SidebarEtudiant = () => {
             <ListNested size={20} />
           </span>
         </div>
+
+        <span className='ms-5'><Button /></span>
 
         <div className="fw-bold me-md-4 d-flex align-items-center gap-4">
           <span>
