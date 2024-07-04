@@ -74,7 +74,7 @@
     .title {
         text-align: center;
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        margin: 10px 0 20px 0;
+        margin: 9px 0 10px 0;
         font-size: 13px;
         font-weight: 800;
         margin-top: 35px;
@@ -203,6 +203,13 @@
     .mysiderbar .out {
         margin-top: 0px;
 }
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: auto;
+  }
 }
  @media only screen and (max-width: 768px){
         .mysiderbar header{
@@ -235,6 +242,13 @@
         .mysiderbar nav ul li a .icon{
             height: 50px;
         }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: auto;
+          }
 }
 @media only screen and (max-width: 567px){
         .mysiderbar header{
@@ -273,4 +287,207 @@
         .mysiderbar .userIcon .nomUser{
             display: none;
         }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: auto;
+          }
 }
+
+
+/*------- updProfileCoach css Editcoach -------*/
+
+.update-profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-photo-container {
+    text-align: center;
+  }
+  
+  .profile-photo {
+    display: flex;
+    margin-left: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-details {
+    margin-left: 20px;
+  }
+  
+  .profile-detail {
+    margin-bottom: 10px;
+  }
+  .profile-detail {
+    margin: 20px;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+  }
+  
+  .change-password-button {
+    margin-top: 10px;
+    padding: 0;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .change-password-button:hover {
+    text-decoration: underline;
+  }
+  
+  .update-profile-form button{
+    margin: 15px;
+  }
+  
+  /* EditProfileCoach */.edit-profile-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  display: flex;
+}
+
+.profile-photo-container {
+  text-align: center;
+}
+
+.profile-photo {
+    display: flex;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  justify-content: center;
+align-items:  center;
+margin-top: 5rem;
+}
+
+.profile-details {
+  margin-left: 20px;
+}
+
+.edit-profile-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc; /* Bordure inférieure seulement */
+  outline: none; /* Supprime le focus border */
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Couleur de bordure au focus */
+}
+
+.button-group {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* .change-password-button {
+  margin-top: 10px;
+  padding: 0;
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+}
+
+.change-password-button:hover {
+  text-decoration: underline;
+} */
+
+
+  
+
+  /* EditPassword css */
+
+  .edit-password-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-password-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-password-form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+
+/*-------- FIN CSS coach-profile  */
