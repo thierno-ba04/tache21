@@ -1,7 +1,5 @@
 .mere-web{
     background: rgb(245, 245, 245);
-
-
 }
 
 .icons{
@@ -17,4 +15,8 @@
 }
 .eye-pen .fa-solid{
     font-size: 25px;
+}
+
+.btn{
+    background: rgb(45, 44, 44);
 }

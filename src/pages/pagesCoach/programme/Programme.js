@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./programme.css";
+import { Link } from "react-router-dom";
 
 const Programme = () => {
   return (
@@ -26,9 +27,11 @@ const Programme = () => {
               </div>
               <p>plus de 2 millions d'étudiants</p>
               <div className="eye-pen d-flex justify-content-center gap-5">
+                <Link to="/coursprogram">
                 <div>
                   <i class="fa-solid fa-eye" style={{color:"yellow"}}></i>
                 </div>
+                </Link>
                 <div>
                   <i class="fa-solid fa-pencil" style={{color:"blue"}}></i>
                 </div>

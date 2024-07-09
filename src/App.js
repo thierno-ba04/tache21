@@ -12,7 +12,7 @@ import CoursArchive from "./pages/pagesCoach/coursarchive/CoursArchive";
 import UpdProfileCoach from "./pages/pagesCoach/updprofilecoach/UpdProfileCoach";
 import EditProfileCoach from "./pages/pagesCoach/editprofilecoach/EditProfileCoach";
 import EditPassword from "./pages/pagesCoach/editpassword/EditPassword";
-import SidebarCoach from "./components/SidebarCoach";
+// import SidebarCoach from "./components/SidebarCoach";
 import AdminDashboard from "./pages/pagesadmin/AdminDashboard";
 import EtudiantDashboard from "./pages/pagesEtudiant/etudianddashboard/EtudiantDashboard";
 import LayoutCoach from "./layout/LayoutCoach";
@@ -24,6 +24,7 @@ import Messages from "./pages/pagesEtudiant/messages/Messages";
 import NousRejoidre from "./pages/pagesEtudiant/nousrejoindre/NousRejoindre";
 import AllCoach from "./pages/pagesEtudiant/allcoach/AllCoachs";
 import ProgrammesEtud from "./pages/pagesEtudiant/programmes/ProgrammesEtud";
+import CoursProgram from "./pages/pagesCoach/coursprogrammation/CoursProgram";
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
             <Route path="/etudiant" element={<Etudiant />} />
             <Route path="/message" element={<Message />} />
             <Route path="/coursArchive" element={<CoursArchive />} />
+            <Route path="/coursprogram" element={<CoursProgram />} />
+
           </Route>
 
           {/* Route Etudiant */}
