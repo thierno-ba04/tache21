@@ -25,6 +25,7 @@ import NousRejoidre from "./pages/pagesEtudiant/nousrejoindre/NousRejoindre";
 import AllCoach from "./pages/pagesEtudiant/allcoach/AllCoachs";
 import ProgrammesEtud from "./pages/pagesEtudiant/programmes/ProgrammesEtud";
 import CoursProgram from "./pages/pagesCoach/coursprogrammation/CoursProgram";
+import HtmlCss from "./pages/pagesCoach/coursprogrammation/courshtmlcss/HtmlCss";
 
 function App() {
   return (
@@ -51,6 +52,8 @@ function App() {
             <Route path="/message" element={<Message />} />
             <Route path="/coursArchive" element={<CoursArchive />} />
             <Route path="/coursprogram" element={<CoursProgram />} />
+            <Route path="/htmlcss" element={<HtmlCss />} />
+
 
           </Route>
 

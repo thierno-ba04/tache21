@@ -6,10 +6,10 @@ const CoursProgram = () => {
   return (
     <div>
       <Container>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center" style={{marginTop:"100px"}}>
           <div
-            className="bg-dark "
-            style={{ color: "white", width: "55%", borderRadius: "20px" }}
+            className="programmation bg-dark "
+            style={{ color: "white", borderRadius: "20px" }}
           >
             <h1 className="text-center">Cours Programmation</h1>
           </div>
@@ -17,7 +17,7 @@ const CoursProgram = () => {
         <div className="mt-5 d-flex justify-content-center">
         <h2 >FRONT END</h2>
         </div>
-        <Row className="mt-5 gy-5">
+        <Row className="mt-5 gy-5 d-flex ms-1">
           <Col md={4}>
             <div
               className="htmlcss"
@@ -34,9 +34,11 @@ const CoursProgram = () => {
                   <i class="fa-brands fa-css3-alt"></i>
                 </div>
               </div>
+              <Link to="/htmlcss">
               <div className="mt-3 d-flex justify-content-center">
                 <button>Voir les cours</button>
               </div>
+              </Link>
             </div>
           </Col>
 
@@ -82,7 +84,7 @@ const CoursProgram = () => {
         <div className="mt-5 d-flex justify-content-center">
         <h2 >BACK END</h2>
         </div>
-        <Row className="mt-5  gy-5">
+        <Row className="mt-5  gy-5 ms-1">
        
           <Col md={4}>
             <div
@@ -143,7 +145,7 @@ const CoursProgram = () => {
         </Row>
         <Link to="/programme">
         <div className="mt-5 d-flex justify-content-center">
-        <button className="mt-5" style={{width:"15%"}}>
+        <button className="retourn mt-5">
             Retour
         </button>
         </div>

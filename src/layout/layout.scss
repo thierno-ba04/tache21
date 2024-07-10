@@ -1,10 +1,14 @@
-.outlet {
-    margin-left: 110px; /* Ajustez cette valeur en fonction de la largeur de votre barre latérale */
-    padding-top: 30px; /* Ajoutez un padding en haut pour que les cartes soient visibles */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alignez les éléments à gauche */
-    overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse la hauteur de la fenêtre */
-    // max-height: calc(100vh - 100px); /* Ajustez la hauteur maximale en fonction de vos besoins */
-  }
+// .outlet {
+//     margin-left: 110px; /* Ajustez cette valeur en fonction de la largeur de votre barre latérale */
+//     padding-top: 30px; /* Ajoutez un padding en haut pour que les cartes soient visibles */
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start; /* Alignez les éléments à gauche */
+//     overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse la hauteur de la fenêtre */
+//     // max-height: calc(100vh - 100px); /* Ajustez la hauteur maximale en fonction de vos besoins */
+//   }
+
+  .outlet {
+    transform: translate(75px 100px);
+   }
   
