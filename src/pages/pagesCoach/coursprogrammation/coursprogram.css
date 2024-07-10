@@ -1,0 +1,32 @@
+.htmlcss{
+    background: rgb(245, 245, 245);
+}
+
+.html{
+    color: orange;
+}
+
+.css{
+    color: rgb(25, 0, 255);
+}
+
+.htmlcss .fa-brands{
+    font-size: 50px;
+}
+
+.js{
+    color: yellow;
+}
+
+.react{
+    color: aqua;
+}
+
+
+.php{
+    color: rgb(110, 110, 110);
+}
+
+.laravel{
+    color: red;
+}

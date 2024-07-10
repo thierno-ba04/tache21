@@ -21,7 +21,7 @@ import {
   where,
 } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase";
-import "./Sidebar.css";
+import "./sidebar.css";
 // import { upload } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";

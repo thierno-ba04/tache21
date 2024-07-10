@@ -78,6 +78,12 @@
         font-size: 13px;
         font-weight: 800;
         /* margin-top: 35px; */
+<<<<<<< HEAD
+=======
+    }
+    .title:hover{
+      color: white;
+>>>>>>> ca4e83f745db12c4fd7f997806180f2d0f852a27
     }
     
     nav{
@@ -115,7 +121,7 @@
     
     nav ul li a:hover,
     nav ul li .messagerie button:hover{
-        color: var(--bg-active);
+        color: white;
         border-bottom: none;
     }
     nav ul li:hover{

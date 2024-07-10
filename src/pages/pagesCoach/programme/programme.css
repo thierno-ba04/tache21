@@ -1,0 +1,22 @@
+.mere-web{
+    background: rgb(245, 245, 245);
+}
+
+.icons{
+    font-size: 45px;
+}
+
+.eye-pen{
+    background: rgb(223, 216, 216);
+    border-radius: 20px;
+    height: 4rem;
+    padding-top: 15px;
+    /* width: 15rem; */
+}
+.eye-pen .fa-solid{
+    font-size: 25px;
+}
+
+.btn{
+    background: rgb(45, 44, 44);
+}
