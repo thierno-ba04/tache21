@@ -143,7 +143,7 @@ const CoursProgram = () => {
         </Row>
         <Link to="/programme">
         <div className="mt-5 d-flex justify-content-center">
-        <button className=" mt-5" style={{width:"15%"}}>
+        <button className="mt-5" style={{width:"15%"}}>
             Retour
         </button>
         </div>
