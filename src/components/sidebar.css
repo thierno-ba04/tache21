@@ -1,37 +1,37 @@
 .body {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    background-image: url("/src/assets/img/image-de-font.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    color: aliceblue;
-    position: relative;
-  }
-  
-  .body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000099;
-    z-index: -1;
-  }
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-image: url("/src/assets/img/image-de-font.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Utilisation de 100vh pour couvrir l'écran complet */
+  position: relative;
+  color: aliceblue;
+}
+
+.body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Opacité noire à 50% avec rgba */
+  z-index: -1;
+}
+
 
 :root{
     --bg-primary: #f4f5ff;
     --bg-secondary: #87ceeb;
-    --bg-active: #fff; 
+    --bg-active: #eeebeb; 
     --cl-text: #f6f4e6;
     --bg-color: #5a5c69;
     --bg-color1: #4e73df;
@@ -78,12 +78,9 @@
         font-size: 13px;
         font-weight: 800;
         /* margin-top: 35px; */
-<<<<<<< HEAD
-=======
     }
     .title:hover{
       color: white;
->>>>>>> ca4e83f745db12c4fd7f997806180f2d0f852a27
     }
     
     nav{
