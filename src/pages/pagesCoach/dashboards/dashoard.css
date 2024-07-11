@@ -1,0 +1,47 @@
+.body2 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-image: url("/src/assets/img/image-de-font2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Utilisation de 100vh pour couvrir l'écran complet */
+    position: relative;
+    color: hsl(208, 100%, 97%);
+  }
+  
+  .body2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Opacité noire à 50% avec rgba */
+    z-index: -1;
+  }
+
+.outlet {
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.btnrpds {
+    background-color: none;
+    border: 1px solid blue;
+}
+.new-message-input {
+    justify-content: center;
+    align-items: center;
+    width: calc(70% - 40px); /* Ajustez la largeur selon votre mise en page */
+  }
+  
+
+
