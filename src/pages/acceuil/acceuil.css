@@ -68,7 +68,7 @@
 }
 
   .text-accl{
-    font-size: 14px;
+    font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-style: oblique;
@@ -155,7 +155,7 @@
 
   .form-button {
     padding: 10px 15px;
-    margin-top: -10px;
+    margin-top: -20px;
     width: 200px;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
           "Lucida Sans Unicode", Geneva, Verdana, sans-serif;

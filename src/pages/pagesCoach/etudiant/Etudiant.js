@@ -1,10 +1,11 @@
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { EyeFill, Link, PencilFill, TrashFill } from "react-bootstrap-icons";
+import { Col, Container, Row, InputGroup, FormControl } from "react-bootstrap";
+import { EyeFill, PencilFill, TrashFill, Search } from "react-bootstrap-icons";
 import { db } from "../../../firebase/firebase";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./etudiant.css";
 
 const Etudiant = () => {
     const [users, setUsers] = useState([]);
@@ -28,95 +29,119 @@ const Etudiant = () => {
             setUsers(data);
         } catch (error) {
             console.error("Error fetching data:", error);
+            setError("Erreur lors de la récupération des données.");
         }
     };
 
     const handleUpdateUser = (id) => {
-       navigate(`/UpdateUser/${id}`);
+        navigate(`/UpdateUser/${id}`);
     };
 
     const handleDeleteUser = async (id) => {
         try {
             await deleteDoc(doc(db, "user", id));
             getData();
-            toast.success("utilisateur supprimé avec succés");
+            toast.success("Utilisateur supprimé avec succès");
         } catch (error) {
-            console.error("Error lors de la suppression de l'utilisateur", error);
+            console.error("Erreur lors de la suppression de l'utilisateur:", error);
+            setError("Erreur lors de la suppression de l'utilisateur.");
         }
     };
 
-    const currentItems = users.filter((user) =>
-        user.Nom.toLowerCase().includes(search.toLowerCase())
-    );
+    const filteredUsers = users.filter((user) => {
+        return (
+            (user.Prenom && user.Prenom.toLowerCase().includes(search.toLowerCase())) ||
+            (user.Nom && user.Nom.toLowerCase().includes(search.toLowerCase())) ||
+            (user.Téléphone && user.Téléphone.toLowerCase().includes(search.toLowerCase())) ||
+            (user.Email && user.Email.toLowerCase().includes(search.toLowerCase())) ||
+            (user.Status && user.Status.toLowerCase().includes(search.toLowerCase()))
+        );
+    });
+
+    useEffect(() => {
+        if (search && filteredUsers.length === 0) {
+            setError("Aucun utilisateur n'est trouvé");
+        } else {
+            setError("");
+        }
+    }, [search, filteredUsers]);
 
     return (
         <div>
             <Container className="glob">
-                <Row className="titre">
-                    <Col className="col-md-12">
-                        <h2>Listes des étudiants</h2>
-                        <button className="btn1">
-                            <RouterLink to="/addetudiant" className="link">
-                                ajouter
-                            </RouterLink>
-                        </button>
-                        <form style={{ display: "inline" }}>
-                            <input
-                                type="text"
-                                placeholder="Search Etudiant..."
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                            />
+                <Row>
+                    <Col xs={12} className="d-flex flex-column flex-md-row align-items-md-center mt-3">
+                        <h2 className="titre mb-3 mb-md-0">Liste des étudiants</h2>
+                        <form style={{ display: "inline", marginLeft: "auto" }}>
+                            <InputGroup>
+                                <FormControl
+                                    type="text"
+                                    placeholder="Rechercher étudiant..."
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    className="form-control"
+                                />
+                                <InputGroup.Text>
+                                    <Search />
+                                </InputGroup.Text>
+                            </InputGroup>
                         </form>
+                    </Col>
+                    <Col xs={12} className="text-md-end mt-3 mt-md-0">
+                        <RouterLink to="/addetudiant" className="btn1 RouterLink">
+                            Ajouter
+                        </RouterLink>
                     </Col>
                 </Row>
                 <Row>
-                    <Col className="col-md-12">
-                        <table>
+                    <Col xs={12}>
+                        <table className="tableau-style w-80">
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>Prenom</th>
                                     <th>Nom</th>
                                     <th>Téléphone</th>
-                                    <th>E-mail</th>
+                                    <th>Email</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {currentItems.length > 0 ? (
-                                    currentItems.map((user, index) => (
+                                {filteredUsers.length > 0 ? (
+                                    filteredUsers.map((user, index) => (
                                         <tr key={user.id}>
                                             <td>{index + 1}</td>
+                                            <td>{user.Prenom}</td>
                                             <td>{user.Nom}</td>
                                             <td>{user.Téléphone}</td>
-                                            <td>{user.email}</td>
+                                            <td>{user.Email}</td>
                                             <td>{user.Status}</td>
                                             <td className="icons">
-                                                <Link to={`/voir/${user.id}`}>
-                                                    <EyeFill size={18} color="skyblue" className="ms-2" />
-                                                </Link>
+                                                <RouterLink to={`/voir/${user.id}`} className="mt-2">
+                                                    <EyeFill size={18} color="skyblue" />
+                                                </RouterLink>
                                                 <button
                                                     onClick={() => handleUpdateUser(user.id)}
-                                                    className="button-delete"
+                                                    className="button-edit"
                                                 >
-                                                    <PencilFill size={18} color="yellow" className="ms-2" />
+                                                    <PencilFill size={18} color="yellow" />
                                                 </button>
                                                 <button
                                                     onClick={() => handleDeleteUser(user.id)}
                                                     className="button-delete"
                                                 >
-                                                    <TrashFill size={18} color="red" className="ms-2" />
+                                                    <TrashFill size={18} color="red" />
                                                 </button>
                                             </td>
                                         </tr>
                                     ))
                                 ) : (
                                     <tr>
-                                    <td colSpan="8" style={{ textAlign: "center", color: "red" }}>
-                                      {error}
-                                    </td>
-                                  </tr>
+                                        <td colSpan="7" style={{ textAlign: "center", color: "red" }}>
+                                            {error || "Aucun étudiant trouvé."}
+                                        </td>
+                                    </tr>
                                 )}
                             </tbody>
                         </table>

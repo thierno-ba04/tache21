@@ -25,6 +25,10 @@ import NousRejoidre from "./pages/pagesEtudiant/nousrejoindre/NousRejoindre";
 import AllCoach from "./pages/pagesEtudiant/allcoach/AllCoachs";
 import ProgrammesEtud from "./pages/pagesEtudiant/programmes/ProgrammesEtud";
 import CoursProgram from "./pages/pagesCoach/coursprogrammation/CoursProgram";
+import HtmlCss from "./pages/pagesCoach/coursprogrammation/courshtmlcss/HtmlCss";
+import AddEtudiant from "./pages/pagesCoach/etudiant/addetudiant/AddEtudiant";
+import UpdateUser from "./pages/pagesCoach/etudiant/updateuser/UpdateUser";
+import Voir from "./pages/pagesCoach/etudiant/voir/Voir";
 
 function App() {
   return (
@@ -48,9 +52,14 @@ function App() {
             <Route path="/editPassword" element={<EditPassword />} />
             <Route path="/Programme" element={<Programme />} />
             <Route path="/etudiant" element={<Etudiant />} />
+            <Route path="/addetudiant" element={<AddEtudiant />} />
+            <Route path="/UpdateUser/:id" element={<UpdateUser />} />
+            <Route path="/voir/:id" element={<Voir />} />
             <Route path="/message" element={<Message />} />
             <Route path="/coursArchive" element={<CoursArchive />} />
             <Route path="/coursprogram" element={<CoursProgram />} />
+            <Route path="/htmlcss" element={<HtmlCss />} />
+
 
           </Route>
 

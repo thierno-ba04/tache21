@@ -98,7 +98,7 @@ const Dashboard = ({ sidebarOpen }) => {
                 <Card.Link href={card.link} className="mt-4 text-white">
                   Lien du déploiement
                 </Card.Link>
-                <div className="mb-2">
+                <div className="mb-2 d-flex">
                   <button
                     className="btn btn-danger"
                     style={{ width: "100px", marginTop: "20px" }}
@@ -106,26 +106,28 @@ const Dashboard = ({ sidebarOpen }) => {
                   >
                     {card.buttonText}
                   </button>
+                  <button
+                  type="button" 
+                  className="btn btn-primary ms-auto" 
+                  onClick={() => handleReplyClick(card.id)}
+                >
+                  <i className="fas fa-envelope"></i> Commentaires
+                </button>
+
                 </div>
               </div>
             </Col>
             <div>
-              <div className="input-group rounded-4">
-                <input
+              {/* <div className="input-group rounded-4"> */}
+                {/* <input
                   type="text"
                   className="new-message-input form-control"
                   placeholder="Écrire un commentaire"
                   value={comments[card.id] || ''}
                   onChange={(e) => handleCommentChange(card.id, e)}
-                />
-                <button 
-                  type="button" 
-                  className="btn btn-primary" 
-                  onClick={() => handleReplyClick(card.id)}
-                >
-                  <i className="fas fa-envelope"></i> Commentaires
-                </button>
-              </div>
+                /> */}
+                
+              {/* </div> */}
             </div>
           </div>
         ))}

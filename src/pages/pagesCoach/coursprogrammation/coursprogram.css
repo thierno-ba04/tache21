@@ -30,3 +30,52 @@
 .laravel{
     color: red;
 }
+
+
+
+
+
+
+.retourn{
+    width: 15%;
+}
+
+
+
+
+
+/* responsive */
+
+@media screen and (min-width: 320px) {
+    .retourn{
+        width: 45%;
+    }  
+}
+
+/* responsive */
+
+@media screen and (min-width: 768px) {
+    .programmation{
+        width: 55%;
+    }
+    .retourn{
+        width: 25%;
+    }  
+
+
+}
+
+
+/* responsive */
+
+@media screen and (min-width: 1024px) {
+    .programmation{
+        width: 55%;
+    }
+    .retourn{
+        width: 15%;
+    }  
+}
+
+
+
