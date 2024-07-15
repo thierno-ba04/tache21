@@ -2,7 +2,6 @@
     width: 100%;
     margin: auto;
     padding: 20px;
-    background-color: #f9f9f9;
     border-radius: 8px;
 }
 
@@ -57,7 +56,6 @@ tbody tr:hover {
 
 .icons {
     display: flex;
-    /* gap: 5px; */
 }
 
 .button-delete, .button-edit {
@@ -65,5 +63,39 @@ tbody tr:hover {
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 320px){
+    .glob {
+        width: 50%;
+        margin: auto;
+    }
+    .tableau-style {
+        margin: auto;
+        width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    .glob {
+        width: 50%;
+        margin: auto;
+    }
+    .tableau-style {
+        margin: auto;
+        width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 1024px){
+    .glob {
+        width: 50%;
+        margin: auto;
+    }
+    .tableau-style {
+        margin: auto;
+        width: 50%;
+        
+    }
+  }
 
 

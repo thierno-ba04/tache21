@@ -70,7 +70,7 @@ const Etudiant = () => {
         <div>
             <Container className="glob">
                 <Row>
-                    <Col xs={12} className="d-flex flex-column flex-md-row align-items-md-center mt-3">
+                    <Col xs={12} className="d-flex flex-md-row align-items-md-center mt-3">
                         <h2 className="titre mb-3 mb-md-0">Liste des étudiants</h2>
                         <form style={{ display: "inline", marginLeft: "auto" }}>
                             <InputGroup>
