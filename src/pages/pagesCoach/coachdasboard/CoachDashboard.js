@@ -1,9 +1,9 @@
-import SidebarCoach from "../../../components/SidebarCoach";
+import Dashboard from "../dashboards/Dashbord";
 
 const CoachDashboard = () => {
     return ( 
         <div>
-            {/* <SidebarCoach /> */}
+            <Dashboard />
         </div>
      );
 }

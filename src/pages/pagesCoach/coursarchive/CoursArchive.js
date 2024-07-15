@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import "./coursarchive.css";
+
 
 const CoursArchive = () => {
   const location = useLocation();
@@ -37,7 +39,7 @@ const CoursArchive = () => {
   };
 
   return (
-    <div className="bod">
+    <div className="bodimg">
       <Container>
         <div className="d-flex justify-content-center" style={{ marginTop: '100px' }}>
           <div className="bootstrap bg-dark" style={{ color: 'white', width: '55%', borderRadius: '20px' }}>

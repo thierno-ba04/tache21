@@ -1,0 +1,43 @@
+.user-details h1{
+    font-family: 'monospace';
+    margin-top: 100px;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: inherit;
+    color: dimgray;
+  }
+  
+.details{
+    display: block;
+    margin: auto;
+    width: 50%;
+    font-size: 17px;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+  }
+  .details span{
+  font-weight: 400;
+  color: dimgrey;
+  }
+
+  .btn-edit {
+    background-color: #008cba;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .btn-edit:hover {
+    background-color: #008cba;
+    border: none;
+    color: white;
+  }
