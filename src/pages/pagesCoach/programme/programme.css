@@ -1,3 +1,23 @@
+
+.bodimg {
+    position: relative;
+    width: 100%;
+}
+
+.bodimg::before {
+    content: "";
+    background: rgba(130, 130, 130, 0.5);
+    background-image: url("/src/assets/img/image-de-font.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .mere-web{
     background: rgb(245, 245, 245);
 }
