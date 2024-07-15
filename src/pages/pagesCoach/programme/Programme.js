@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Programme = () => {
   return (
+    <div className="bodimg">
     <Container>
       <div
         className="d-flex justify-content-center"
@@ -124,6 +125,7 @@ const Programme = () => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 
