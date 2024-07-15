@@ -1,8 +1,11 @@
-
+.bodimg {
+    position: relative;
+    width: 100%;
+}
 
 .bodimg::before {
     content: "";
-    background: rgba(130, 130, 130, 0.5); 
+    background: rgba(130, 130, 130, 0.5);
     background-image: url("/src/assets/img/image-de-font.jpg");
     background-size: cover;
     background-position: center;
@@ -14,81 +17,38 @@
     z-index: -1;
 }
 
-@media screen and (min-width: 320px) {
+.ajoutetache {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.archsup {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bootstrap {
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
     .ReactPlayer {
-        width: 100%; /* Ensure the video takes the full width */
-    }
-
-    .bodimg {
-        position: relative;
-        width: 203%;
-    }
-
-    .archsup {
-        width: 40%;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .bootstrap {
-        width: 100%;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .boots {
-        width: 100%;
-    }
-
-    .ajoutetache {
-        width: 100%;
-        text-align: center;
+        width: 100%; /* Full width for smaller screens */
     }
 }
 
 @media screen and (min-width: 768px) {
-    .bodimg {
-        position: relative;
-        width: 100%;
-    }
-
-    .archsup {
-        width: 40%;
-        display: flex;
-        justify-content: space-around;
-    }
-   
-    .vid {
-        position: relative;
-        left: 0;
-    }
-
     .bootstrap {
         width: 80%;
-        margin: 0 auto;
-    }
-
-    .ajoutetache {
-        width: 80%;
-        text-align: center;
         margin: 0 auto;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .bodimg {
-        position: relative;
-        width: 100%;
-    }
-    
     .bootstrap {
         width: 50%;
-        margin: 0 auto;
-    }
-
-    .ajoutetache {
-        width: 50%;
-        text-align: center;
         margin: 0 auto;
     }
 }
