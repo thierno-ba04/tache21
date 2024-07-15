@@ -29,6 +29,7 @@ import HtmlCss from "./pages/pagesCoach/coursprogrammation/courshtmlcss/HtmlCss"
 import AddEtudiant from "./pages/pagesCoach/etudiant/addetudiant/AddEtudiant";
 import UpdateUser from "./pages/pagesCoach/etudiant/updateuser/UpdateUser";
 import Voir from "./pages/pagesCoach/etudiant/voir/Voir";
+import CoachView from "./pages/pagesCoach/coursprogrammation/courshtmlcss/coachview/CoachView";
 
 function App() {
   return (
@@ -59,6 +60,8 @@ function App() {
             <Route path="/coursArchive" element={<CoursArchive />} />
             <Route path="/coursprogram" element={<CoursProgram />} />
             <Route path="/htmlcss" element={<HtmlCss />} />
+            <Route path="/coachview" element={<CoachView />} />
+
 
 
           </Route>

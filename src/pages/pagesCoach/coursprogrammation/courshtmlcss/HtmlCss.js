@@ -1,44 +1,68 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Container, Row, Modal, Button, Form } from "react-bootstrap";
+import { Col, Container, Row, Modal, Button, Form, Spinner, Alert } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { Link, useNavigate } from "react-router-dom";
+import { getFirestore, collection, addDoc, onSnapshot, updateDoc, doc, deleteDoc } from "firebase/firestore";
+import { firebaseConfig } from '../../../../firebase/firebase';
 import "./htmlcss.css";
 
-const HtmlCss = () => {
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
-    return savedTasks || [
-      // Your initial tasks...
-    ];
-  });
+import { db } from '../../../../firebase/firebase'; // Assurez-vous d'importer db directement
 
+const HtmlCss = () => {
+  const [tasks, setTasks] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [newTaskUrl, setNewTaskUrl] = useState('');
   const [newTaskInstruction, setNewTaskInstruction] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const navigate = useNavigate();
+  // const db = getFirestore(firebaseConfig);
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+    const tasksCollection = collection(db, 'tasks');
+    const unsubscribe = onSnapshot(tasksCollection, (snapshot) => {
+      const tasksData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setTasks(tasksData);
+      setLoading(false);
+    }, (error) => {
+      setError(error.message);
+      setLoading(false);
+    });
+  
+    return () => unsubscribe();
+  }, [db]);
 
-  const addTask = () => {
-    const newTask = { id: tasks.length + 1, url: newTaskUrl, archived: false, instruction: newTaskInstruction };
-    setTasks([...tasks, newTask]);
-    setShowModal(false);
-    setNewTaskUrl('');
-    setNewTaskInstruction('');
+  const addTask = async () => {
+    try {
+      const newTask = { url: newTaskUrl, archived: false, instruction: newTaskInstruction };
+      await addDoc(collection(db, 'tasks'), newTask);
+      setShowModal(false);
+      setNewTaskUrl('');
+      setNewTaskInstruction('');
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
-  const archiveTask = (id) => {
-    const updatedTasks = tasks.map(task => task.id === id ? { ...task, archived: true } : task);
-    setTasks(updatedTasks);
-    const archivedTasks = updatedTasks.filter(task => task.archived);
-    navigate('/coursarchive', { state: { archivedTasks } });
+  const archiveTask = async (id) => {
+    try {
+      const taskDoc = doc(db, 'tasks', id);
+      await updateDoc(taskDoc, { archived: true });
+      const archivedTasks = tasks.filter(task => task.archived);
+      navigate('/coursarchive', { state: { archivedTasks } });
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
-  const deleteTask = (id) => {
-    const updatedTasks = tasks.filter(task => task.id !== id);
-    setTasks(updatedTasks);
+  const deleteTask = async (id) => {
+    try {
+      const taskDoc = doc(db, 'tasks', id);
+      await deleteDoc(taskDoc);
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
@@ -52,6 +76,22 @@ const HtmlCss = () => {
         <div className="ajoutetache d-flex justify-content-center mt-5">
           <Button onClick={() => setShowModal(true)}>Ajouter une tâche</Button>
         </div>
+
+        {loading && (
+          <div className="d-flex justify-content-center mt-5">
+            <Spinner animation="border" role="status">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          </div>
+        )}
+
+        {error && (
+          <div className="d-flex justify-content-center mt-5">
+            <Alert variant="danger">
+              {error}
+            </Alert>
+          </div>
+        )}
 
         <Row className="vid gy-5 d-flex justify-content-center" style={{ marginTop: '80px' }}>
           {tasks.filter(task => !task.archived).map((task, index) => (
@@ -116,7 +156,6 @@ const HtmlCss = () => {
             </Button>
           </Modal.Footer>
         </Modal>
-
       </Container>
     </div>
   );
