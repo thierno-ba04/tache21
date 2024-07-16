@@ -15,7 +15,7 @@ const CoursProgram = () => {
           </div>
         </div>
         <div className="mt-5 d-flex justify-content-center">
-        <h2 style={{color:"white"}}>FRONT END</h2>
+        <h2>FRONT END</h2>
         </div>
         <Row className="mt-5 gy-5 d-flex ms-1">
           <Col md={4}>
@@ -56,7 +56,9 @@ const CoursProgram = () => {
                 </div>
               </div>
               <div className="mt-3 d-flex justify-content-center">
+                <Link to="/javascript">
                 <button>Voir les cours</button>
+                </Link>
               </div>
             </div>
           </Col>
@@ -82,7 +84,7 @@ const CoursProgram = () => {
         </Row>
 
         <div className="mt-5 d-flex justify-content-center">
-        <h2 style={{color:"white"}}>BACK END</h2>
+        <h2>BACK END</h2>
         </div>
         <Row className="mt-5  gy-5 ms-1">
        

@@ -30,6 +30,7 @@ import AddEtudiant from "./pages/pagesCoach/etudiant/addetudiant/AddEtudiant";
 import UpdateUser from "./pages/pagesCoach/etudiant/updateuser/UpdateUser";
 import Voir from "./pages/pagesCoach/etudiant/voir/Voir";
 import CoachView from "./pages/pagesCoach/coursprogrammation/courshtmlcss/coachview/CoachView";
+import Javascript from "./pages/pagesCoach/coursprogrammation/coursjavascript/Javascript";
 
 function App() {
   return (
@@ -61,6 +62,8 @@ function App() {
             <Route path="/coursprogram" element={<CoursProgram />} />
             <Route path="/htmlcss" element={<HtmlCss />} />
             <Route path="/coachview" element={<CoachView />} />
+            <Route path="/javascript" element={<Javascript />} />
+
 
 
 
