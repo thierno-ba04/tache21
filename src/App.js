@@ -30,6 +30,16 @@ import AddEtudiant from "./pages/pagesCoach/etudiant/addetudiant/AddEtudiant";
 import UpdateUser from "./pages/pagesCoach/etudiant/updateuser/UpdateUser";
 import Voir from "./pages/pagesCoach/etudiant/voir/Voir";
 import CoachView from "./pages/pagesCoach/coursprogrammation/courshtmlcss/coachview/CoachView";
+import DashboardAdmin from "./pages/pagesadmin/dashboard-admin/DashboardAdmin";
+import ProgrammeAdmin from "./pages/pagesadmin/Programmes/ProgrammeAdmin";
+import Users from "./pages/pagesadmin/users/Users";
+import AjouterUser from "./pages/pagesadmin/ajouteruser/AjouterUser";
+import Budget from "./pages/pagesadmin/budget/Budget";
+import { Calendar } from "react-bootstrap-icons";
+import Categorie from "./pages/pagesadmin/categorie/Categorie";
+import Decconecter from "./pages/pagesadmin/deconnexion/Decconecter";
+import ListesCoachs from "./pages/pagesadmin/users/coachs/ListesCoachs";
+import ListesEtudiants from "./pages/pagesadmin/users/etudiants/ListesEtudiants";
 
 function App() {
   return (
@@ -41,7 +51,17 @@ function App() {
 
           {/* Route Admin */}
           <Route element={<LayoutAdmin />}>
-            <Route path="/AdminDashboard" element={<AdminDashboard />} />
+          <Route path="/Adminedashboard" element={<AdminDashboard />} />
+            <Route path="/dashboardAdmin" element={<DashboardAdmin />} />
+            <Route path="/programmes" element={<ProgrammeAdmin />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/coachs" element={<ListesCoachs />} />
+            <Route path="/etudiants" element={<ListesEtudiants />} />
+            <Route path="/budget" element={<Budget />} />
+            <Route path="/Calendar" element={<Calendar />} />
+            <Route path="/ajouteruser" element={<AjouterUser />} />
+            <Route path="/categorie" element={<Categorie />} />
+            <Route path="/deconnecter" element={<Decconecter />} />
           </Route>
 
           {/* Route coach */}
