@@ -5,8 +5,8 @@
 
 .bodimg::before {
     content: "";
-    background: rgba(130, 130, 130, 0.5);
-    background-image: url("/src/assets/img/image-de-font.jpg");
+    background: rgba(167, 165, 165, 0.5);
+    /* background-image: url("/src/assets/img/image-de-font.jpg"); */
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -68,6 +68,9 @@
 /* responsive */
 
 @media screen and (min-width: 320px) {
+    .bodimg::before {
+        height: 105%;
+    }
     .retourn{
         width: 45%;
     }  
@@ -76,6 +79,10 @@
 /* responsive */
 
 @media screen and (min-width: 768px) {
+    .bodimg::before {
+        height: 103%;
+    }
+    
     .programmation{
         width: 55%;
     }
@@ -90,6 +97,10 @@
 /* responsive */
 
 @media screen and (min-width: 1024px) {
+    .bodimg::before {
+        height: 110%;
+    }
+    
     .programmation{
         width: 55%;
     }

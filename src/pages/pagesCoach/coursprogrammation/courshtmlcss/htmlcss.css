@@ -5,8 +5,8 @@
 
 .bodimg::before {
     content: "";
-    background: rgba(130, 130, 130, 0.5);
-    background-image: url("/src/assets/img/image-de-font.jpg");
+    background: rgba(167, 165, 165, 0.5);
+    /* background-image: url("/src/assets/img/image-de-font.jpg"); */
     background-size: cover;
     background-position: center;
     position: absolute;

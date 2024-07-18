@@ -40,6 +40,7 @@ import Categorie from "./pages/pagesadmin/categorie/Categorie";
 import Decconecter from "./pages/pagesadmin/deconnexion/Decconecter";
 import ListesCoachs from "./pages/pagesadmin/users/coachs/ListesCoachs";
 import ListesEtudiants from "./pages/pagesadmin/users/etudiants/ListesEtudiants";
+import Javascript from "./pages/pagesCoach/coursprogrammation/coursjavascript/Javascript";
 
 function App() {
   return (
@@ -81,6 +82,8 @@ function App() {
             <Route path="/coursprogram" element={<CoursProgram />} />
             <Route path="/htmlcss" element={<HtmlCss />} />
             <Route path="/coachview" element={<CoachView />} />
+            <Route path="/javascript" element={<Javascript />} />
+
 
 
 
