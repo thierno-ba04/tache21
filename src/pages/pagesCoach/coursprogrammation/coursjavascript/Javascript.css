@@ -1,4 +1,4 @@
-.bodimg {
+/* .bodimg {
     position: relative;
     width: 100%;
 }
@@ -6,7 +6,6 @@
 .bodimg::before {
     content: "";
     background: rgba(167, 165, 165, 0.5);
-    /* background-image: url("/src/assets/img/image-de-font.jpg"); */
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -35,7 +34,7 @@
 
 @media screen and (max-width: 320px) {
     .ReactPlayer {
-        width: 100%; /* Full width for smaller screens */
+        width: 100%; 
     }
 
     .bodimg::before {
@@ -63,4 +62,4 @@
     .bodimg::before {
        height: 102%;
     }
-}
+} */

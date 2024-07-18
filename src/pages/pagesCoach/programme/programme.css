@@ -1,5 +1,5 @@
 
-.bodyy {
+.bodimg {
     position: relative;
     width: 100%;
     position: relative;
@@ -7,7 +7,7 @@
 
 }
 
-.bodyy::before {
+.bodimg::before {
     content: "";
     background: rgba(167, 165, 165, 0.5);
     /* background-image: url("/src/assets/img/image-de-font.jpg"); */

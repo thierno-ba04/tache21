@@ -2,11 +2,12 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./programme.css";
 import { Link } from "react-router-dom";
+import imgleraning from "../../../assets/img/e-learning-session-de-formation-en-ligne.jpg"
 
 
 const Programme = () => {
   return (
-    <div className="bodyy">
+    <div className="bodimg">
     <Container>
       <div
         className="d-flex justify-content-center"
@@ -92,6 +93,9 @@ const Programme = () => {
         </Col>
       </Row>
     </Container>
+    <div className="mt-5 d-flex justify-content-center">
+    <img src={imgleraning} alt="" className="w-100"/>
+    </div>
     </div>
   );
 };

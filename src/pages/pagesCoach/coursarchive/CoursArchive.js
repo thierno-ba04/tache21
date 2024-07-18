@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Row, Spinner, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { collection, onSnapshot, updateDoc, doc } from "firebase/firestore";
+import { collection, query, onSnapshot, updateDoc, doc, where } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 import ReactPlayer from "react-player";
 import "./coursarchive.css";
 
 const CoursArchive = () => {
+  const [archivedTasks, setArchivedTasks] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,6 +33,31 @@ const CoursArchive = () => {
     return () => unsubscribe();
   }, []);
 
+
+
+  useEffect(() => {
+    const tasksCollection = collection(db, "tasksjavascrip");
+    const tasksQuery = query(tasksCollection, where("archived", "==", true));
+    const unsubscribe = onSnapshot(
+      tasksQuery,
+      (snapshot) => {
+        const tasksData = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setArchivedTasks(tasksData);
+        setLoading(false);
+      },
+      (error) => {
+        setError(error.message);
+        setLoading(false);
+      }
+    );
+
+    return () => unsubscribe();
+  }, []);
+
+
   const unarchiveTask = async (id) => {
     try {
       const taskDoc = doc(db, "tasks", id);
@@ -46,7 +72,7 @@ const CoursArchive = () => {
       <Container>
         <div className="d-flex justify-content-center" style={{ marginTop: "100px" }}>
           <div className="bg-dark" style={{ color: "white", borderRadius: "20px" }}>
-            <h1 className="text-center">Archived Tasks</h1>
+            <h1 className="text-center">Cours Archiver</h1>
           </div>
         </div>
 

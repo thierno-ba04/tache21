@@ -23,6 +23,8 @@ import {
   orderBy,
 } from "firebase/firestore";
 import { db } from "../../../../firebase/firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./htmlcss.css";
 
 const HtmlCss = () => {
@@ -68,8 +70,10 @@ const HtmlCss = () => {
       };
       await addDoc(collection(db, "tasks"), newTask);
       resetModal();
+      toast.success("Tâche ajoutée avec succès !");
     } catch (error) {
       setError(error.message);
+      toast.error("Erreur lors de l'ajout de la tâche.");
     }
   };
 
@@ -81,8 +85,10 @@ const HtmlCss = () => {
         instruction: newTaskInstruction,
       });
       resetModal();
+      toast.success("Tâche mise à jour avec succès !");
     } catch (error) {
       setError(error.message);
+      toast.error("Erreur lors de la mise à jour de la tâche.");
     }
   };
 
@@ -105,8 +111,10 @@ const HtmlCss = () => {
       const taskDoc = doc(db, "tasks", id);
       await updateDoc(taskDoc, { archived: true });
       navigate("/coursarchive");
+      toast.success("Tâche archivée avec succès !");
     } catch (error) {
       setError(error.message);
+      toast.error("Erreur lors de l'archivage de la tâche.");
     }
   };
 
@@ -114,14 +122,17 @@ const HtmlCss = () => {
     try {
       const taskDoc = doc(db, "tasks", id);
       await deleteDoc(taskDoc);
+      toast.success("Tâche supprimée avec succès !");
     } catch (error) {
       setError(error.message);
+      toast.error("Erreur lors de la suppression de la tâche.");
     }
   };
 
   return (
     <div className="bodimg">
       <Container>
+        <ToastContainer />
         <div
           className="boots d-flex justify-content-center"
           style={{ marginTop: "100px" }}

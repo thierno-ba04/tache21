@@ -1,4 +1,3 @@
-// App.js
 import Acceuil from "./pages/acceuil/Acceuil";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -31,56 +30,57 @@ import UpdateUser from "./pages/pagesCoach/etudiant/updateuser/UpdateUser";
 import Voir from "./pages/pagesCoach/etudiant/voir/Voir";
 import CoachView from "./pages/pagesCoach/coursprogrammation/courshtmlcss/coachview/CoachView";
 import Javascript from "./pages/pagesCoach/coursprogrammation/coursjavascript/Javascript";
+import { ToastContainer } from "react-toastify";
+import { TaskProvider } from "./pages/pagesCoach/taskContext/TaskContext";
 
 function App() {
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Acceuil />} />
-          <Route path="/login" element={<Login />} />
+      <TaskProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Acceuil />} />
+            <Route path="/login" element={<Login />} />
 
-          {/* Route Admin */}
-          <Route element={<LayoutAdmin />}>
-            <Route path="/AdminDashboard" element={<AdminDashboard />} />
-          </Route>
+            {/* Route Admin */}
+            <Route element={<LayoutAdmin />}>
+              <Route path="/AdminDashboard" element={<AdminDashboard />} />
+            </Route>
 
-          {/* Route coach */}
-          <Route element={<LayoutCoach />}>
-            <Route path="/Dashboard" element={<Dashboard />} />
-            <Route path="/CoachDashboard" element={<CoachDashboard />} />
-            <Route path="/updProfileCoach" element={<UpdProfileCoach />} />
-            <Route path="/editProfileCoach" element={<EditProfileCoach />} />
-            <Route path="/editPassword" element={<EditPassword />} />
-            <Route path="/Programme" element={<Programme />} />
-            <Route path="/etudiant" element={<Etudiant />} />
-            <Route path="/addetudiant" element={<AddEtudiant />} />
-            <Route path="/UpdateUser/:id" element={<UpdateUser />} />
-            <Route path="/voir/:id" element={<Voir />} />
-            <Route path="/message" element={<Message />} />
-            <Route path="/coursArchive" element={<CoursArchive />} />
-            <Route path="/coursprogram" element={<CoursProgram />} />
-            <Route path="/htmlcss" element={<HtmlCss />} />
-            <Route path="/coachview" element={<CoachView />} />
-            <Route path="/javascript" element={<Javascript />} />
+            {/* Route coach */}
+            <Route element={<LayoutCoach />}>
+              <Route path="/Dashboard" element={<Dashboard />} />
+              <Route path="/CoachDashboard" element={<CoachDashboard />} />
+              <Route path="/updProfileCoach" element={<UpdProfileCoach />} />
+              <Route path="/editProfileCoach" element={<EditProfileCoach />} />
+              <Route path="/editPassword" element={<EditPassword />} />
+              <Route path="/Programme" element={<Programme />} />
+              <Route path="/etudiant" element={<Etudiant />} />
+              <Route path="/addetudiant" element={<AddEtudiant />} />
+              <Route path="/UpdateUser/:id" element={<UpdateUser />} />
+              <Route path="/voir/:id" element={<Voir />} />
+              <Route path="/message" element={<Message />} />
+              <Route path="/coursArchive" element={<CoursArchive />} />
+              <Route path="/coursprogram" element={<CoursProgram />} />
+              <Route path="/htmlcss" element={<HtmlCss />} />
+              <Route path="/coachview" element={<CoachView />} />
+              <Route path="/javascript" element={<Javascript />} />
+            </Route>
 
-
-
-
-          </Route>
-
-          {/* Route Etudiant */}
-          <Route element={<LayoutEtudiant />}>
-            <Route path="/etudiantDashboard" element={<EtudiantDashboard />} />
-            <Route path="/DashboardEtud" element={<DashboardEtud />} />
-            <Route path="/allcoach" element={<AllCoach />} />
-            <Route path="/meslivraisons" element={<MesLivaisons />} />
-            <Route path="/messages" element={<Messages />} />
-            <Route path="/nousrejoindre" element={<NousRejoidre />} />
-            <Route path="/programmesetud" element={<ProgrammesEtud />} />
-          </Route>
-        </Routes>
-      </Router>
+            {/* Route Etudiant */}
+            <Route element={<LayoutEtudiant />}>
+              <Route path="/etudiantDashboard" element={<EtudiantDashboard />} />
+              <Route path="/DashboardEtud" element={<DashboardEtud />} />
+              <Route path="/allcoach" element={<AllCoach />} />
+              <Route path="/meslivraisons" element={<MesLivaisons />} />
+              <Route path="/messages" element={<Messages />} />
+              <Route path="/nousrejoindre" element={<NousRejoidre />} />
+              <Route path="/programmesetud" element={<ProgrammesEtud />} />
+            </Route>
+          </Routes>
+        </Router>
+        <ToastContainer />
+      </TaskProvider>
     </div>
   );
 }
