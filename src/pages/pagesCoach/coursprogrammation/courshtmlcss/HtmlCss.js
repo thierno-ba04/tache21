@@ -12,13 +12,15 @@ import {
 import ReactPlayer from "react-player";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  getFirestore,
   collection,
   addDoc,
   onSnapshot,
   updateDoc,
   doc,
   deleteDoc,
+  serverTimestamp,
+  query,
+  orderBy,
 } from "firebase/firestore";
 import { db } from "../../../../firebase/firebase";
 import "./htmlcss.css";
@@ -36,8 +38,9 @@ const HtmlCss = () => {
 
   useEffect(() => {
     const tasksCollection = collection(db, "tasks");
+    const tasksQuery = query(tasksCollection, orderBy("createdAt", "asc"));
     const unsubscribe = onSnapshot(
-      tasksCollection,
+      tasksQuery,
       (snapshot) => {
         const tasksData = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -61,6 +64,7 @@ const HtmlCss = () => {
         url: newTaskUrl,
         archived: false,
         instruction: newTaskInstruction,
+        createdAt: serverTimestamp(),
       };
       await addDoc(collection(db, "tasks"), newTask);
       resetModal();
