@@ -1,6 +1,6 @@
 // App.js
 import Acceuil from "./pages/acceuil/Acceuil";
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/auth/Login";
 import CoachDashboard from "./pages/pagesCoach/coachdasboard/CoachDashboard";
@@ -41,8 +41,18 @@ import Decconecter from "./pages/pagesadmin/deconnexion/Decconecter";
 import ListesCoachs from "./pages/pagesadmin/users/coachs/ListesCoachs";
 import ListesEtudiants from "./pages/pagesadmin/users/etudiants/ListesEtudiants";
 import Javascript from "./pages/pagesCoach/coursprogrammation/coursjavascript/Javascript";
+import Home from "./pages/pagesadmin/home/Home";
+import Header from "./pages/pagesadmin/hearder/Header";
+import SidebarAdmin from "./components/SidebarAdmin";
 
 function App() {
+
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
+
   return (
     <div>
       <Router>
@@ -54,7 +64,10 @@ function App() {
           <Route element={<LayoutAdmin />}>
           <Route path="/Adminedashboard" element={<AdminDashboard />} />
             <Route path="/dashboardAdmin" element={<DashboardAdmin />} />
-            <Route path="/programmes" element={<ProgrammeAdmin />} />
+            <Route path="/home" element={<Home/>} />
+            <Route path="/header" element={<Header OpenSidebar={OpenSidebar}/>} />
+            <Route path="/sidebaradmin" element={<SidebarAdmin openSidebarToggle={openSidebarToggle}/>} />
+            {/* <Route path="/programmes" element={<ProgrammeAdmin />} />
             <Route path="/users" element={<Users />} />
             <Route path="/coachs" element={<ListesCoachs />} />
             <Route path="/etudiants" element={<ListesEtudiants />} />
@@ -62,7 +75,7 @@ function App() {
             <Route path="/Calendar" element={<Calendar />} />
             <Route path="/ajouteruser" element={<AjouterUser />} />
             <Route path="/categorie" element={<Categorie />} />
-            <Route path="/deconnecter" element={<Decconecter />} />
+            <Route path="/deconnecter" element={<Decconecter />} /> */}
           </Route>
 
           {/* Route coach */}

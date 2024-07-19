@@ -6,7 +6,7 @@ import SidebarAdmin from '../components/SidebarAdmin'
 function LayoutAdmin() {
     return (
         <div>
-            <SidebarAdmin/>
+            {/* <SidebarAdmin/> */}
             <div className='outlet'>
                 <Outlet/>
             </div>
