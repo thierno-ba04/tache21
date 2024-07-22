@@ -21,7 +21,7 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../../../../firebase/firebase";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { TaskContext } from "../../taskContext/TaskContext";
 
 const Javascript = () => {
@@ -129,6 +129,49 @@ const Javascript = () => {
             <Alert variant="danger">{error}</Alert>
           </div>
         )}
+
+        <div className="text" style={{ background: "white" }}>
+          <div className="mt-5 ms-4">
+            <h4>Programme Javascript</h4>
+          </div>
+          <div
+            className="mt-5 ms-4"
+            style={{ background: "black", color: "white" }}
+          >
+            <h5>Débutant</h5>
+          </div>
+          <div className="mt-5 ms-4">
+            <h5>définition</h5>
+            <p>
+              JavaScript est un langage de programmation de scripts
+              principalement employé dans les pages web interactives et une
+              partie essentielle des applications web. Avec les langages HTML et
+              CSS, JavaScript est au cœur des langages utilisés par les
+              développeurs web.
+            </p>
+          </div>
+          <div className="mt-5 ms-4">
+            <h5>Conditions préalables</h5>
+            <p>
+              Avant de poursuivre avec ce programme sur JavaScript, l'etudiant
+              doit 'avoir :
+            </p>
+            <ul>
+              <li>Compréhension de base de HTML et CSS.</li>
+              <li>Pouvoir utiliser sublimeText et/ou visual Studio Code</li>
+            </ul>
+            <h5>Objectifs</h5>
+            <p>A la fin de ce programme l'etudiant doit être en mesure de:</p>
+            <ul>
+              <li>Utiliser les variables</li>
+              <li>Prendre en main les boucles et les conditions</li>
+              <li>Créer des fonctions et les méthodes</li>
+              <li>Manipuler les donnéesobjets paramètres</li>
+              <li>Utiliser javascript dans des pages web</li>
+              <li>Créer des scripts</li>
+            </ul>
+          </div>
+        </div>
 
         <Row
           className="vid gy-5 d-flex justify-content-center"

@@ -94,7 +94,7 @@ const Programme = () => {
       </Row>
     </Container>
     <div className="mt-5 d-flex justify-content-center">
-    <img src={imgleraning} alt="" className="w-100"/>
+    <img src={imgleraning} alt="" className="w-100" style={{height: "50%"}}/>
     </div>
     </div>
   );
